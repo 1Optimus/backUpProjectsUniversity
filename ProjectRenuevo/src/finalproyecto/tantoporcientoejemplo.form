@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="cc" red="33" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,-34,0,0,6,107"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+    <Property name="useNullLayout" type="boolean" value="false"/>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Palatino Linotype" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;El licenciado Juan Rojas imparte clases de sociolog&#xed;a a 90 alumnos,&lt;p&gt;de ellos 40 perdieron el curso, &#xbf;Qu&#xe9; porcentaje de alumnos&lt;p&gt;perdieron?&lt;p&gt;&lt;pre&gt;     90 ________________ 100%&lt;/pre&gt;&lt;p&gt;&lt;pre&gt;     40 ________________    x&lt;/pre&gt;&lt;p&gt;(40 x 100)/90 = 4000/90 = 44.44&lt;p&gt;La respuesta es: Al Licenciado Rojas le perdi&#xf3; el curso el 44% de los&lt;p&gt;alumnos.  (En esta respuesta se realizo una aproximaci&#xf3;n) &lt;html&gt;&quot;" type="code"/>
+        </Property>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="60" width="590" height="290"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Palatino Linotype" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;Encontrar el 11.5% de 500&lt;p&gt;&lt;pre&gt;100% _______________500&lt;/pre&gt;&lt;p&gt;&lt;pre&gt;11.5% _______________ x &lt;/pre&gt;&lt;p&gt;&lt;p&gt;(11.5 x 500)/100  = 5750/100 = 57.50&lt;p&gt;La respuesta es el 11.5% de 500 es 57.50 &lt;html&gt;&quot;" type="code"/>
+        </Property>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="620" y="60" width="340" height="280"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/income.png"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="1000" y="590" width="150" height="150"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e1" green="e6" red="99" type="rgb"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="1640" height="50"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="626" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="1014" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jLabel1" alignment="0" pref="50" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Palatino Linotype" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ejemplos del tanto por ciento"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ejercicios"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="1220" y="950" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;html&gt;&quot;" type="code"/>
+        </Property>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="990" y="50" width="20" height="320"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="-20" y="350" width="1640" height="20"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;html&gt;&quot;" type="code"/>
+        </Property>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="960" y="360" width="20" height="620"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Palatino Linotype" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;En la misi&#xf3;n Asambleas de Dios existen 15,000 pastores de ellos&lt;p&gt;&#xfa;nicamente 450 poseen veh&#xed;culo, &#xbf;Qu&#xe9; porcentaje representan?&lt;p&gt;&lt;pre&gt;     15000 ________________ 100%&lt;/pre&gt;&lt;p&gt;&lt;pre&gt;     450 ________________    x&lt;/pre&gt;&lt;p&gt;&lt;p&gt;(450 x 100)/15000 = 45000/15000 = 3&lt;p&gt;La respuesta es: en la misi&#xf3;n Asambleas de Dios&lt;p&gt;&#xfa;nicamente el 3% de los pastores posee veh&#xed;culo.&lt;html&gt;&quot;" type="code"/>
+        </Property>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="1020" y="60" width="530" height="290"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Palatino Linotype" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;Tambi&#xe9;n puede suceder que lo que tengamos que encontrar sea el 100%, es decir la cantidad&lt;p&gt;total de donde sali&#xf3; un porcentaje, por ejemplo si una persona dice que tuvo que pagar el&lt;p&gt;25% en de anticipo por la compra de un autom&#xf3;vil y &#xfa;nicamente sabemos que el dinero pagado&lt;p&gt;fue 2,000 quetzales, y queremos saber cu&#xe1;l es la cantidad total que cuesta el veh&#xed;culo, entonces&lt;p&gt;procedemos de la siguiente forma:&lt;p&gt;&lt;pre&gt;     25% ________________ 2000&lt;/pre&gt;&lt;p&gt;&lt;pre&gt;     100% ________________    x&lt;/pre&gt;&lt;p&gt;Simplemente cambiamos el planteamiento del problema, en la parte de arriba de la regla&lt;p&gt;de tres colocamos el dato conocido que es que 25% es 2000 y el 100% que es el dato que desconocemos&lt;p&gt;lo colocamos en la parte de abajo.Como la regla de tres es directa procedemos de la manera que ya&lt;p&gt;conocemos.&lt;p&gt;&lt;p&gt;&lt;pre&gt;     25% ________________ 2000&lt;/pre&gt;&lt;p&gt;&lt;pre&gt;     100% ________________    x&lt;/pre&gt;&lt;p&gt;  (100 x 2000)/25  = 200000/25 = 8000 La respuesta es: el costo total del veh&#xed;culo es 8000 quetzales&lt;html&gt;&quot;" type="code"/>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="10" y="370" width="950" height="510"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel12">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;p&gt;|&lt;html&gt;&quot;" type="code"/>
+        </Property>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="590" y="50" width="20" height="290"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+  </SubComponents>
+</Form>

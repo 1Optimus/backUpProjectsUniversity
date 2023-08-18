@@ -1,0 +1,233 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+webVentas
+</name>
+</assembly>
+<members>
+<member name="T:webVentas.My.MyWebExtension">
+ <summary>
+ Módulo usado para definir las propiedades que están disponibles en el espacio de nombres My para proyectos web.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:webVentas.My.MyWebExtension.Computer">
+ <summary>
+ Devuelve información sobre el equipo host.
+ </summary>
+</member>
+<member name="P:webVentas.My.MyWebExtension.User">
+ <summary>
+ Devuelve información del usuario web actual.
+ </summary>
+</member>
+<member name="P:webVentas.My.MyWebExtension.Request">
+ <summary>
+ Devuelve un objeto Request.
+ </summary>
+</member>
+<member name="P:webVentas.My.MyWebExtension.Response">
+ <summary>
+ Devuelve un objeto Response.
+ </summary>
+</member>
+<member name="P:webVentas.My.MyWebExtension.Log">
+ <summary>
+ Devuelve el objeto de registro Asp.
+ </summary>
+</member>
+<member name="T:webVentas.asmxTipoCambio.InfoVariable">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.InfoVariable.Variables">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.InfoVariable.CambioDia">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.InfoVariable.CambioDolar">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.InfoVariable.TotalItems">
+<remarks/>
+</member>
+<member name="T:webVentas.asmxTipoCambio.Variable">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.Variable.moneda">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.Variable.descripcion">
+<remarks/>
+</member>
+<member name="T:webVentas.asmxTipoCambio.DataVariable">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.DataVariable.Vars">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.DataVariable.TotalItems">
+<remarks/>
+</member>
+<member name="T:webVentas.asmxTipoCambio.Var">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.Var.moneda">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.Var.fecha">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.Var.venta">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.Var.compra">
+<remarks/>
+</member>
+<member name="T:webVentas.asmxTipoCambio.VarDolar">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.VarDolar.fecha">
+<remarks/>
+</member>
+<member name="P:webVentas.asmxTipoCambio.VarDolar.referencia">
+<remarks/>
+</member>
+<member name="F:webVentas.masterLogin._head">
+<summary>
+Control head.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.masterLogin._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.masterLogin._ContentPlaceHolder1">
+<summary>
+Control ContentPlaceHolder1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._head">
+<summary>
+Control head.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._divmenu">
+<summary>
+Control divmenu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._pag1">
+<summary>
+Control pag1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._Button1">
+<summary>
+Control Button1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._Button2">
+<summary>
+Control Button2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._salir">
+<summary>
+Control salir.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.mpPrincipal._ContentPlaceHolder1">
+<summary>
+Control ContentPlaceHolder1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.wfMantAlmacen._nomProducto">
+<summary>
+Control nomProducto.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.wfMantAlmacen._Guardar">
+<summary>
+Control Guardar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.wfMantAlmacen._lblCod">
+<summary>
+Control lblCod.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:webVentas.wfMantAlmacen._gwTipoProducto">
+<summary>
+Control gwTipoProducto.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+</members>
+</doc>

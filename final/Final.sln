@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back", "Back", "{792EA910-87A4-43CF-95C9-EE5197617232}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front", "Front", "{20CB23A8-0AC0-46F4-BAAE-D671DC51AF4C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "webVentas", "webVentas\webVentas.vbproj", "{165A5BA5-371D-4C37-9350-836435C800DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D325C78D-230D-407C-B6B4-EE6386C99903} = {D325C78D-230D-407C-B6B4-EE6386C99903}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "wcfBack", "wcfBack\wcfBack.vbproj", "{D325C78D-230D-407C-B6B4-EE6386C99903}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DBDLL", "DBDLL\DBDLL.vbproj", "{CCCCCEBE-7E65-4A98-95DF-78B049E04071}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "lnFrontDLL", "lnFrontDLL\lnFrontDLL.vbproj", "{1641A6BD-CEF8-4E1D-88FD-8DC8C4ABC74F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LogiaDelNegocio", "LogiaDelNegocio\LogiaDelNegocio.vbproj", "{963B69A6-A35C-4BDD-A93D-E27B6E104B34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{165A5BA5-371D-4C37-9350-836435C800DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165A5BA5-371D-4C37-9350-836435C800DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165A5BA5-371D-4C37-9350-836435C800DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165A5BA5-371D-4C37-9350-836435C800DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D325C78D-230D-407C-B6B4-EE6386C99903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D325C78D-230D-407C-B6B4-EE6386C99903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D325C78D-230D-407C-B6B4-EE6386C99903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D325C78D-230D-407C-B6B4-EE6386C99903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCCCEBE-7E65-4A98-95DF-78B049E04071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCCCEBE-7E65-4A98-95DF-78B049E04071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCCCEBE-7E65-4A98-95DF-78B049E04071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCCCEBE-7E65-4A98-95DF-78B049E04071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1641A6BD-CEF8-4E1D-88FD-8DC8C4ABC74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1641A6BD-CEF8-4E1D-88FD-8DC8C4ABC74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1641A6BD-CEF8-4E1D-88FD-8DC8C4ABC74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1641A6BD-CEF8-4E1D-88FD-8DC8C4ABC74F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{963B69A6-A35C-4BDD-A93D-E27B6E104B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{963B69A6-A35C-4BDD-A93D-E27B6E104B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{963B69A6-A35C-4BDD-A93D-E27B6E104B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{963B69A6-A35C-4BDD-A93D-E27B6E104B34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{165A5BA5-371D-4C37-9350-836435C800DF} = {20CB23A8-0AC0-46F4-BAAE-D671DC51AF4C}
+		{D325C78D-230D-407C-B6B4-EE6386C99903} = {792EA910-87A4-43CF-95C9-EE5197617232}
+		{CCCCCEBE-7E65-4A98-95DF-78B049E04071} = {792EA910-87A4-43CF-95C9-EE5197617232}
+		{1641A6BD-CEF8-4E1D-88FD-8DC8C4ABC74F} = {20CB23A8-0AC0-46F4-BAAE-D671DC51AF4C}
+		{963B69A6-A35C-4BDD-A93D-E27B6E104B34} = {792EA910-87A4-43CF-95C9-EE5197617232}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F66F6196-88E2-423E-9035-204A0B08AA60}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/umgCentral
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DBDLL\\DBDLL.vbproj
+		SccProjectTopLevelParentUniqueName1 = LaboratorioDesaWeb.sln
+		SccProjectName1 = DBDLL
+		SccLocalPath1 = DBDLL
+		SccProjectUniqueName2 = lnFrontDLL\\lnFrontDLL.vbproj
+		SccProjectTopLevelParentUniqueName2 = LaboratorioDesaWeb.sln
+		SccProjectName2 = lnFrontDLL
+		SccLocalPath2 = lnFrontDLL
+		SccProjectUniqueName3 = LogiaDelNegocio\\LogiaDelNegocio.vbproj
+		SccProjectTopLevelParentUniqueName3 = LaboratorioDesaWeb.sln
+		SccProjectName3 = LogiaDelNegocio
+		SccLocalPath3 = LogiaDelNegocio
+		SccProjectUniqueName4 = wcfBack\\wcfBack.vbproj
+		SccProjectTopLevelParentUniqueName4 = LaboratorioDesaWeb.sln
+		SccProjectName4 = wcfBack
+		SccLocalPath4 = wcfBack
+		SccProjectUniqueName5 = webVentas\\webVentas.vbproj
+		SccProjectTopLevelParentUniqueName5 = LaboratorioDesaWeb.sln
+		SccProjectName5 = webVentas
+		SccLocalPath5 = webVentas
+	EndGlobalSection
+EndGlobal

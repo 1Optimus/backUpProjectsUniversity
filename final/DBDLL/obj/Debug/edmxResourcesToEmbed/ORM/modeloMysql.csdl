@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mydbModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_almacen">
+    <Key>
+      <PropertyRef Name="ID_ALMACEN" />
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_ALMACEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="EXISTENCIA" Type="Int32" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_ALMACEN_TB_ESTUDIANTE1" FromRole="tb_almacen" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_producto" Relationship="Self.fk_TB_ALMACEN_TB_PRODUCTO1" FromRole="tb_almacen" ToRole="tb_producto" />
+    <NavigationProperty Name="tb_movimiento_almacen" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_ALMACEN1" FromRole="tb_almacen" ToRole="tb_movimiento_almacen" />
+  </EntityType>
+  <EntityType Name="tb_cliente">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NIT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOM1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="NOM2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="APE1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="APE2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_CLIENTE_TB_ESTUDIANTE1" FromRole="tb_cliente" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_venta" Relationship="Self.fk_TB_VENTA_TB_CLIENTE1" FromRole="tb_cliente" ToRole="tb_venta" />
+  </EntityType>
+  <EntityType Name="tb_compra">
+    <Key>
+      <PropertyRef Name="ID_COMPRA" />
+    </Key>
+    <Property Name="ID_COMPRA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROVEEDOR" Type="Int32" Nullable="false" />
+    <Property Name="SERIE_DOCUMENTO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_DOCUMENTO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_COMPRA_TB_ESTUDIANTE1" FromRole="tb_compra" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_proveedor" Relationship="Self.fk_TB_COMPRA_TB_PROVEEDOR1" FromRole="tb_compra" ToRole="tb_proveedor" />
+    <NavigationProperty Name="tb_detalle_compra" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_COMPRA1" FromRole="tb_compra" ToRole="tb_detalle_compra" />
+    <NavigationProperty Name="tb_movimiento_almacen" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_COMPRA1" FromRole="tb_compra" ToRole="tb_movimiento_almacen" />
+  </EntityType>
+  <EntityType Name="tb_detalle_compra">
+    <Key>
+      <PropertyRef Name="ID_DETALLE_COMPRA" />
+    </Key>
+    <Property Name="ID_DETALLE_COMPRA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_COMPRA" Type="Int32" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_UNIDAD" Type="Int32" Nullable="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_compra" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_COMPRA1" FromRole="tb_detalle_compra" ToRole="tb_compra" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_ESTUDIANTE1" FromRole="tb_detalle_compra" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_producto" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_PRODUCTO1" FromRole="tb_detalle_compra" ToRole="tb_producto" />
+    <NavigationProperty Name="tb_tipo_unidad" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_TIPO_UNIDAD1" FromRole="tb_detalle_compra" ToRole="tb_tipo_unidad" />
+  </EntityType>
+  <EntityType Name="tb_detalle_producto">
+    <Key>
+      <PropertyRef Name="ID_DETALLE_PRODUCTO" />
+    </Key>
+    <Property Name="ID_DETALLE_PRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TB_PRODUCTO_ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_DETALLE_PRODUCTO_TB_ESTUDIANTE1" FromRole="tb_detalle_producto" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_producto" Relationship="Self.fk_TB_DETALLE_PRODUCTO_TB_PRODUCTO1" FromRole="tb_detalle_producto" ToRole="tb_producto" />
+  </EntityType>
+  <EntityType Name="tb_detalle_sesion">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SESION" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_SESION" Type="DateTime" />
+    <NavigationProperty Name="tb_sesion_estudiante" Relationship="Self.fk_TB_DETALLE_SESION_TB_SESION_ESTUDIANTE1" FromRole="tb_detalle_sesion" ToRole="tb_sesion_estudiante" />
+  </EntityType>
+  <EntityType Name="tb_detalle_venta">
+    <Key>
+      <PropertyRef Name="ID_DETALLE_VENTA" />
+    </Key>
+    <Property Name="ID_DETALLE_VENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_VENTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_UNIDAD" Type="Int32" Nullable="false" />
+    <Property Name="CANTIDAD" Type="Int32" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_DETALLE_VENTA_TB_ESTUDIANTE1" FromRole="tb_detalle_venta" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_producto" Relationship="Self.fk_TB_DETALLE_VENTA_TB_PRODUCTO1" FromRole="tb_detalle_venta" ToRole="tb_producto" />
+    <NavigationProperty Name="tb_tipo_unidad" Relationship="Self.fk_TB_DETALLE_VENTA_TB_TIPO_UNIDAD1" FromRole="tb_detalle_venta" ToRole="tb_tipo_unidad" />
+    <NavigationProperty Name="tb_venta" Relationship="Self.fk_TB_DETALLE_VENTA_TB_VENTA1" FromRole="tb_detalle_venta" ToRole="tb_venta" />
+  </EntityType>
+  <EntityType Name="tb_estado_factura">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_FACTURA" />
+    </Key>
+    <Property Name="ID_ESTADO_FACTURA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_ESTADO_FACTURA" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_ESTADO_FACTURA_TB_ESTUDIANTE1" FromRole="tb_estado_factura" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_num_factura" Relationship="Self.fk_TB_NUM_FACTURA_TB_ESTADO_FACTURA1" FromRole="tb_estado_factura" ToRole="tb_num_factura" />
+  </EntityType>
+  <EntityType Name="tb_estado_rango">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_RANGO" />
+    </Key>
+    <Property Name="ID_ESTADO_RANGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_ESTADO_RANGO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_ESTADO_RANGO_TB_ESTUDIANTE1" FromRole="tb_estado_rango" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_factura" Relationship="Self.fk_TB_FACTURA_TB_ESTADO_RANGO1" FromRole="tb_estado_rango" ToRole="tb_factura" />
+  </EntityType>
+  <EntityType Name="tb_estudiante">
+    <Key>
+      <PropertyRef Name="ID_ESTUDIANTE" />
+    </Key>
+    <Property Name="ID_ESTUDIANTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_ESTUDIANTE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CARNE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_almacen" Relationship="Self.fk_TB_ALMACEN_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_almacen" />
+    <NavigationProperty Name="tb_cliente" Relationship="Self.fk_TB_CLIENTE_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_cliente" />
+    <NavigationProperty Name="tb_compra" Relationship="Self.fk_TB_COMPRA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_compra" />
+    <NavigationProperty Name="tb_detalle_compra" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_detalle_compra" />
+    <NavigationProperty Name="tb_detalle_producto" Relationship="Self.fk_TB_DETALLE_PRODUCTO_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_detalle_producto" />
+    <NavigationProperty Name="tb_detalle_venta" Relationship="Self.fk_TB_DETALLE_VENTA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_detalle_venta" />
+    <NavigationProperty Name="tb_estado_factura" Relationship="Self.fk_TB_ESTADO_FACTURA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_estado_factura" />
+    <NavigationProperty Name="tb_estado_rango" Relationship="Self.fk_TB_ESTADO_RANGO_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_estado_rango" />
+    <NavigationProperty Name="tb_factura" Relationship="Self.fk_TB_FACTURA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_factura" />
+    <NavigationProperty Name="tb_movimiento_almacen" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_movimiento_almacen" />
+    <NavigationProperty Name="tb_num_factura" Relationship="Self.fk_TB_NUM_FACTURA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_num_factura" />
+    <NavigationProperty Name="tb_producto" Relationship="Self.fk_TB_PRODUCTO_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_producto" />
+    <NavigationProperty Name="tb_proveedor" Relationship="Self.fk_TB_PROVEEDOR_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_proveedor" />
+    <NavigationProperty Name="tb_sesion_estudiante" Relationship="Self.fk_TB_SESION_ESTUDIANTE_TB_ESTUDIANTE" FromRole="tb_estudiante" ToRole="tb_sesion_estudiante" />
+    <NavigationProperty Name="tb_tipo_factura" Relationship="Self.fk_TB_TIPO_FACTURA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_tipo_factura" />
+    <NavigationProperty Name="tb_tipo_movimiento" Relationship="Self.fk_TB_TIPO_MOVIMIENTO_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_tipo_movimiento" />
+    <NavigationProperty Name="tb_tipo_producto" Relationship="Self.fk_TB_TIPO_PRODUCTO_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_tipo_producto" />
+    <NavigationProperty Name="tb_tipo_unidad" Relationship="Self.fk_TB_TIPO_UNIDAD_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_tipo_unidad" />
+    <NavigationProperty Name="tb_venta" Relationship="Self.fk_TB_VENTA_TB_ESTUDIANTE1" FromRole="tb_estudiante" ToRole="tb_venta" />
+  </EntityType>
+  <EntityType Name="tb_factura">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="ID_TIPO_FACTURA" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO_RANGO" Type="Int32" Nullable="false" />
+    <Property Name="SERIE_FACTURA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RANGO_INICIAL" Type="Int32" />
+    <Property Name="RANGO_FINAL" Type="Int32" />
+    <Property Name="FACTURA_ACTUAL" Type="Int32" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estado_rango" Relationship="Self.fk_TB_FACTURA_TB_ESTADO_RANGO1" FromRole="tb_factura" ToRole="tb_estado_rango" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_FACTURA_TB_ESTUDIANTE1" FromRole="tb_factura" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_tipo_factura" Relationship="Self.fk_TB_FACTURA_TB_TIPO_FACTURA1" FromRole="tb_factura" ToRole="tb_tipo_factura" />
+    <NavigationProperty Name="tb_num_factura" Relationship="Self.fk_TB_NUM_FACTURA_TB_FACTURA1" FromRole="tb_factura" ToRole="tb_num_factura" />
+  </EntityType>
+  <EntityType Name="tb_movimiento_almacen">
+    <Key>
+      <PropertyRef Name="ID_MOVIMIENTO" />
+      <PropertyRef Name="ID_ALMACEN" />
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_MOVIMIENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ALMACEN" Type="Int32" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_MOVIMIENTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_UNIDAD" Type="Int32" Nullable="false" />
+    <Property Name="ID_COMPRA" Type="Int32" />
+    <Property Name="ID_VENTA" Type="Int32" />
+    <Property Name="CANTIDAD" Type="Int32" />
+    <Property Name="COMENTARIO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_almacen" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_ALMACEN1" FromRole="tb_movimiento_almacen" ToRole="tb_almacen" />
+    <NavigationProperty Name="tb_compra" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_COMPRA1" FromRole="tb_movimiento_almacen" ToRole="tb_compra" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_ESTUDIANTE1" FromRole="tb_movimiento_almacen" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_tipo_movimiento" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_MOVIMIENTO1" FromRole="tb_movimiento_almacen" ToRole="tb_tipo_movimiento" />
+    <NavigationProperty Name="tb_tipo_unidad" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_UNIDAD1" FromRole="tb_movimiento_almacen" ToRole="tb_tipo_unidad" />
+    <NavigationProperty Name="tb_venta" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_VENTA1" FromRole="tb_movimiento_almacen" ToRole="tb_venta" />
+  </EntityType>
+  <EntityType Name="tb_num_factura">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="ID_TIPO_FACTURA" />
+      <PropertyRef Name="NUM_FACTURA" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="NUM_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estado_factura" Relationship="Self.fk_TB_NUM_FACTURA_TB_ESTADO_FACTURA1" FromRole="tb_num_factura" ToRole="tb_estado_factura" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_NUM_FACTURA_TB_ESTUDIANTE1" FromRole="tb_num_factura" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_factura" Relationship="Self.fk_TB_NUM_FACTURA_TB_FACTURA1" FromRole="tb_num_factura" ToRole="tb_factura" />
+    <NavigationProperty Name="tb_venta" Relationship="Self.fk_TB_VENTA_TB_NUM_FACTURA1" FromRole="tb_num_factura" ToRole="tb_venta" />
+  </EntityType>
+  <EntityType Name="tb_producto">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="NOM_PRODUCTO" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_almacen" Relationship="Self.fk_TB_ALMACEN_TB_PRODUCTO1" FromRole="tb_producto" ToRole="tb_almacen" />
+    <NavigationProperty Name="tb_detalle_compra" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_PRODUCTO1" FromRole="tb_producto" ToRole="tb_detalle_compra" />
+    <NavigationProperty Name="tb_detalle_producto" Relationship="Self.fk_TB_DETALLE_PRODUCTO_TB_PRODUCTO1" FromRole="tb_producto" ToRole="tb_detalle_producto" />
+    <NavigationProperty Name="tb_detalle_venta" Relationship="Self.fk_TB_DETALLE_VENTA_TB_PRODUCTO1" FromRole="tb_producto" ToRole="tb_detalle_venta" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_PRODUCTO_TB_ESTUDIANTE1" FromRole="tb_producto" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_tipo_producto" Relationship="Self.fk_TB_PRODUCTO_TB_TIPO_PRODUCTO1" FromRole="tb_producto" ToRole="tb_tipo_producto" />
+  </EntityType>
+  <EntityType Name="tb_proveedor">
+    <Key>
+      <PropertyRef Name="ID_PROVEEDOR" />
+    </Key>
+    <Property Name="ID_PROVEEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NIT" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOM1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NOM2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="APE1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="APE2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_compra" Relationship="Self.fk_TB_COMPRA_TB_PROVEEDOR1" FromRole="tb_proveedor" ToRole="tb_compra" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_PROVEEDOR_TB_ESTUDIANTE1" FromRole="tb_proveedor" ToRole="tb_estudiante" />
+  </EntityType>
+  <EntityType Name="tb_sesion_estudiante">
+    <Key>
+      <PropertyRef Name="ID_SESION" />
+      <PropertyRef Name="ID_ESTUDIANTE" />
+    </Key>
+    <Property Name="ID_SESION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <Property Name="CONTRASEÑA" Type="String" MaxLength="23" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_detalle_sesion" Relationship="Self.fk_TB_DETALLE_SESION_TB_SESION_ESTUDIANTE1" FromRole="tb_sesion_estudiante" ToRole="tb_detalle_sesion" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_SESION_ESTUDIANTE_TB_ESTUDIANTE" FromRole="tb_sesion_estudiante" ToRole="tb_estudiante" />
+  </EntityType>
+  <EntityType Name="tb_tipo_factura">
+    <Key>
+      <PropertyRef Name="ID_TIPO_FACTURA" />
+    </Key>
+    <Property Name="ID_TIPO_FACTURA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_TIPO_FACTURA" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_TIPO_FACTURA_TB_ESTUDIANTE1" FromRole="tb_tipo_factura" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_factura" Relationship="Self.fk_TB_FACTURA_TB_TIPO_FACTURA1" FromRole="tb_tipo_factura" ToRole="tb_factura" />
+  </EntityType>
+  <EntityType Name="tb_tipo_movimiento">
+    <Key>
+      <PropertyRef Name="ID_TIPO_MOVIMIENTO" />
+    </Key>
+    <Property Name="ID_TIPO_MOVIMIENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_TIPO_MOVIMIENTO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_TIPO_MOVIMIENTO_TB_ESTUDIANTE1" FromRole="tb_tipo_movimiento" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_movimiento_almacen" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_MOVIMIENTO1" FromRole="tb_tipo_movimiento" ToRole="tb_movimiento_almacen" />
+  </EntityType>
+  <EntityType Name="tb_tipo_producto">
+    <Key>
+      <PropertyRef Name="ID_TIPO_PRODUCTO" />
+    </Key>
+    <Property Name="ID_TIPO_PRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_PRODUCTO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_TIPO_PRODUCTO_TB_ESTUDIANTE1" FromRole="tb_tipo_producto" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_producto" Relationship="Self.fk_TB_PRODUCTO_TB_TIPO_PRODUCTO1" FromRole="tb_tipo_producto" ToRole="tb_producto" />
+  </EntityType>
+  <EntityType Name="tb_tipo_unidad">
+    <Key>
+      <PropertyRef Name="ID_TIPO_UNIDAD" />
+    </Key>
+    <Property Name="ID_TIPO_UNIDAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_TIPO_UNIDAD" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_detalle_compra" Relationship="Self.fk_TB_DETALLE_COMPRA_TB_TIPO_UNIDAD1" FromRole="tb_tipo_unidad" ToRole="tb_detalle_compra" />
+    <NavigationProperty Name="tb_detalle_venta" Relationship="Self.fk_TB_DETALLE_VENTA_TB_TIPO_UNIDAD1" FromRole="tb_tipo_unidad" ToRole="tb_detalle_venta" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_TIPO_UNIDAD_TB_ESTUDIANTE1" FromRole="tb_tipo_unidad" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_movimiento_almacen" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_UNIDAD1" FromRole="tb_tipo_unidad" ToRole="tb_movimiento_almacen" />
+  </EntityType>
+  <EntityType Name="tb_venta">
+    <Key>
+      <PropertyRef Name="ID_VENTA" />
+    </Key>
+    <Property Name="ID_VENTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="NUM_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="TOTA_FACTURA" Type="Single" />
+    <Property Name="TB_ESTUDIANTE_ID_ESTUDIANTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_cliente" Relationship="Self.fk_TB_VENTA_TB_CLIENTE1" FromRole="tb_venta" ToRole="tb_cliente" />
+    <NavigationProperty Name="tb_detalle_venta" Relationship="Self.fk_TB_DETALLE_VENTA_TB_VENTA1" FromRole="tb_venta" ToRole="tb_detalle_venta" />
+    <NavigationProperty Name="tb_estudiante" Relationship="Self.fk_TB_VENTA_TB_ESTUDIANTE1" FromRole="tb_venta" ToRole="tb_estudiante" />
+    <NavigationProperty Name="tb_movimiento_almacen" Relationship="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_VENTA1" FromRole="tb_venta" ToRole="tb_movimiento_almacen" />
+    <NavigationProperty Name="tb_num_factura" Relationship="Self.fk_TB_VENTA_TB_NUM_FACTURA1" FromRole="tb_venta" ToRole="tb_num_factura" />
+  </EntityType>
+  <Association Name="fk_TB_ALMACEN_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_almacen" Type="Self.tb_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_almacen">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_ALMACEN_TB_PRODUCTO1">
+    <End Role="tb_producto" Type="Self.tb_producto" Multiplicity="1" />
+    <End Role="tb_almacen" Type="Self.tb_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_producto">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="tb_almacen">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_MOVIMIENTO_ALMACEN_TB_ALMACEN1">
+    <End Role="tb_almacen" Type="Self.tb_almacen" Multiplicity="1" />
+    <End Role="tb_movimiento_almacen" Type="Self.tb_movimiento_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_almacen">
+        <PropertyRef Name="ID_ALMACEN" />
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="tb_movimiento_almacen">
+        <PropertyRef Name="ID_ALMACEN" />
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_CLIENTE_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_cliente">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_VENTA_TB_CLIENTE1">
+    <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1" />
+    <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_cliente">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="tb_venta">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_COMPRA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_compra">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_COMPRA_TB_PROVEEDOR1">
+    <End Role="tb_proveedor" Type="Self.tb_proveedor" Multiplicity="1" />
+    <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_proveedor">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Principal>
+      <Dependent Role="tb_compra">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_COMPRA_TB_COMPRA1">
+    <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="1" />
+    <End Role="tb_detalle_compra" Type="Self.tb_detalle_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_compra">
+        <PropertyRef Name="ID_COMPRA" />
+      </Principal>
+      <Dependent Role="tb_detalle_compra">
+        <PropertyRef Name="ID_COMPRA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_MOVIMIENTO_ALMACEN_TB_COMPRA1">
+    <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="0..1" />
+    <End Role="tb_movimiento_almacen" Type="Self.tb_movimiento_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_compra">
+        <PropertyRef Name="ID_COMPRA" />
+      </Principal>
+      <Dependent Role="tb_movimiento_almacen">
+        <PropertyRef Name="ID_COMPRA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_COMPRA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_detalle_compra" Type="Self.tb_detalle_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_detalle_compra">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_COMPRA_TB_PRODUCTO1">
+    <End Role="tb_producto" Type="Self.tb_producto" Multiplicity="1" />
+    <End Role="tb_detalle_compra" Type="Self.tb_detalle_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_producto">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="tb_detalle_compra">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_COMPRA_TB_TIPO_UNIDAD1">
+    <End Role="tb_tipo_unidad" Type="Self.tb_tipo_unidad" Multiplicity="1" />
+    <End Role="tb_detalle_compra" Type="Self.tb_detalle_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipo_unidad">
+        <PropertyRef Name="ID_TIPO_UNIDAD" />
+      </Principal>
+      <Dependent Role="tb_detalle_compra">
+        <PropertyRef Name="ID_TIPO_UNIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_PRODUCTO_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_detalle_producto" Type="Self.tb_detalle_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_detalle_producto">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_PRODUCTO_TB_PRODUCTO1">
+    <End Role="tb_producto" Type="Self.tb_producto" Multiplicity="1" />
+    <End Role="tb_detalle_producto" Type="Self.tb_detalle_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_producto">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="tb_detalle_producto">
+        <PropertyRef Name="TB_PRODUCTO_ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_SESION_TB_SESION_ESTUDIANTE1">
+    <End Role="tb_sesion_estudiante" Type="Self.tb_sesion_estudiante" Multiplicity="1" />
+    <End Role="tb_detalle_sesion" Type="Self.tb_detalle_sesion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_sesion_estudiante">
+        <PropertyRef Name="ID_SESION" />
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_detalle_sesion">
+        <PropertyRef Name="ID_SESION" />
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_VENTA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_detalle_venta" Type="Self.tb_detalle_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_detalle_venta">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_VENTA_TB_PRODUCTO1">
+    <End Role="tb_producto" Type="Self.tb_producto" Multiplicity="1" />
+    <End Role="tb_detalle_venta" Type="Self.tb_detalle_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_producto">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="tb_detalle_venta">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_VENTA_TB_TIPO_UNIDAD1">
+    <End Role="tb_tipo_unidad" Type="Self.tb_tipo_unidad" Multiplicity="1" />
+    <End Role="tb_detalle_venta" Type="Self.tb_detalle_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipo_unidad">
+        <PropertyRef Name="ID_TIPO_UNIDAD" />
+      </Principal>
+      <Dependent Role="tb_detalle_venta">
+        <PropertyRef Name="ID_TIPO_UNIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_DETALLE_VENTA_TB_VENTA1">
+    <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="1" />
+    <End Role="tb_detalle_venta" Type="Self.tb_detalle_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_venta">
+        <PropertyRef Name="ID_VENTA" />
+      </Principal>
+      <Dependent Role="tb_detalle_venta">
+        <PropertyRef Name="ID_VENTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_ESTADO_FACTURA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_estado_factura" Type="Self.tb_estado_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_estado_factura">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_NUM_FACTURA_TB_ESTADO_FACTURA1">
+    <End Role="tb_estado_factura" Type="Self.tb_estado_factura" Multiplicity="1" />
+    <End Role="tb_num_factura" Type="Self.tb_num_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estado_factura">
+        <PropertyRef Name="ID_ESTADO_FACTURA" />
+      </Principal>
+      <Dependent Role="tb_num_factura">
+        <PropertyRef Name="ID_ESTADO_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_ESTADO_RANGO_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_estado_rango" Type="Self.tb_estado_rango" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_estado_rango">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_FACTURA_TB_ESTADO_RANGO1">
+    <End Role="tb_estado_rango" Type="Self.tb_estado_rango" Multiplicity="1" />
+    <End Role="tb_factura" Type="Self.tb_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estado_rango">
+        <PropertyRef Name="ID_ESTADO_RANGO" />
+      </Principal>
+      <Dependent Role="tb_factura">
+        <PropertyRef Name="ID_ESTADO_RANGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_FACTURA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_factura" Type="Self.tb_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_factura">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_MOVIMIENTO_ALMACEN_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_movimiento_almacen" Type="Self.tb_movimiento_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_movimiento_almacen">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_NUM_FACTURA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_num_factura" Type="Self.tb_num_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_num_factura">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_PRODUCTO_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_producto" Type="Self.tb_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_producto">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_PROVEEDOR_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_proveedor" Type="Self.tb_proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_proveedor">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_SESION_ESTUDIANTE_TB_ESTUDIANTE">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_sesion_estudiante" Type="Self.tb_sesion_estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_sesion_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_TIPO_FACTURA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_tipo_factura" Type="Self.tb_tipo_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_tipo_factura">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_TIPO_MOVIMIENTO_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_tipo_movimiento" Type="Self.tb_tipo_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_tipo_movimiento">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_TIPO_PRODUCTO_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_tipo_producto" Type="Self.tb_tipo_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_tipo_producto">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_TIPO_UNIDAD_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_tipo_unidad" Type="Self.tb_tipo_unidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_tipo_unidad">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_VENTA_TB_ESTUDIANTE1">
+    <End Role="tb_estudiante" Type="Self.tb_estudiante" Multiplicity="1" />
+    <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estudiante">
+        <PropertyRef Name="ID_ESTUDIANTE" />
+      </Principal>
+      <Dependent Role="tb_venta">
+        <PropertyRef Name="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_FACTURA_TB_TIPO_FACTURA1">
+    <End Role="tb_tipo_factura" Type="Self.tb_tipo_factura" Multiplicity="1" />
+    <End Role="tb_factura" Type="Self.tb_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipo_factura">
+        <PropertyRef Name="ID_TIPO_FACTURA" />
+      </Principal>
+      <Dependent Role="tb_factura">
+        <PropertyRef Name="ID_TIPO_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_NUM_FACTURA_TB_FACTURA1">
+    <End Role="tb_factura" Type="Self.tb_factura" Multiplicity="1" />
+    <End Role="tb_num_factura" Type="Self.tb_num_factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_factura">
+        <PropertyRef Name="ID_FACTURA" />
+        <PropertyRef Name="ID_TIPO_FACTURA" />
+      </Principal>
+      <Dependent Role="tb_num_factura">
+        <PropertyRef Name="ID_FACTURA" />
+        <PropertyRef Name="ID_TIPO_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_MOVIMIENTO1">
+    <End Role="tb_tipo_movimiento" Type="Self.tb_tipo_movimiento" Multiplicity="1" />
+    <End Role="tb_movimiento_almacen" Type="Self.tb_movimiento_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipo_movimiento">
+        <PropertyRef Name="ID_TIPO_MOVIMIENTO" />
+      </Principal>
+      <Dependent Role="tb_movimiento_almacen">
+        <PropertyRef Name="ID_TIPO_MOVIMIENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_UNIDAD1">
+    <End Role="tb_tipo_unidad" Type="Self.tb_tipo_unidad" Multiplicity="1" />
+    <End Role="tb_movimiento_almacen" Type="Self.tb_movimiento_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipo_unidad">
+        <PropertyRef Name="ID_TIPO_UNIDAD" />
+      </Principal>
+      <Dependent Role="tb_movimiento_almacen">
+        <PropertyRef Name="ID_TIPO_UNIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_MOVIMIENTO_ALMACEN_TB_VENTA1">
+    <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+    <End Role="tb_movimiento_almacen" Type="Self.tb_movimiento_almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_venta">
+        <PropertyRef Name="ID_VENTA" />
+      </Principal>
+      <Dependent Role="tb_movimiento_almacen">
+        <PropertyRef Name="ID_VENTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_VENTA_TB_NUM_FACTURA1">
+    <End Role="tb_num_factura" Type="Self.tb_num_factura" Multiplicity="1" />
+    <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_num_factura">
+        <PropertyRef Name="ID_FACTURA" />
+        <PropertyRef Name="ID_TIPO_FACTURA" />
+        <PropertyRef Name="NUM_FACTURA" />
+      </Principal>
+      <Dependent Role="tb_venta">
+        <PropertyRef Name="ID_FACTURA" />
+        <PropertyRef Name="ID_TIPO_FACTURA" />
+        <PropertyRef Name="NUM_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_PRODUCTO_TB_TIPO_PRODUCTO1">
+    <End Role="tb_tipo_producto" Type="Self.tb_tipo_producto" Multiplicity="1" />
+    <End Role="tb_producto" Type="Self.tb_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipo_producto">
+        <PropertyRef Name="ID_TIPO_PRODUCTO" />
+      </Principal>
+      <Dependent Role="tb_producto">
+        <PropertyRef Name="ID_TIPO_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mydbORMconeccion" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_almacen" EntityType="Self.tb_almacen" />
+    <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" />
+    <EntitySet Name="tb_compra" EntityType="Self.tb_compra" />
+    <EntitySet Name="tb_detalle_compra" EntityType="Self.tb_detalle_compra" />
+    <EntitySet Name="tb_detalle_producto" EntityType="Self.tb_detalle_producto" />
+    <EntitySet Name="tb_detalle_sesion" EntityType="Self.tb_detalle_sesion" />
+    <EntitySet Name="tb_detalle_venta" EntityType="Self.tb_detalle_venta" />
+    <EntitySet Name="tb_estado_factura" EntityType="Self.tb_estado_factura" />
+    <EntitySet Name="tb_estado_rango" EntityType="Self.tb_estado_rango" />
+    <EntitySet Name="tb_estudiante" EntityType="Self.tb_estudiante" />
+    <EntitySet Name="tb_factura" EntityType="Self.tb_factura" />
+    <EntitySet Name="tb_movimiento_almacen" EntityType="Self.tb_movimiento_almacen" />
+    <EntitySet Name="tb_num_factura" EntityType="Self.tb_num_factura" />
+    <EntitySet Name="tb_producto" EntityType="Self.tb_producto" />
+    <EntitySet Name="tb_proveedor" EntityType="Self.tb_proveedor" />
+    <EntitySet Name="tb_sesion_estudiante" EntityType="Self.tb_sesion_estudiante" />
+    <EntitySet Name="tb_tipo_factura" EntityType="Self.tb_tipo_factura" />
+    <EntitySet Name="tb_tipo_movimiento" EntityType="Self.tb_tipo_movimiento" />
+    <EntitySet Name="tb_tipo_producto" EntityType="Self.tb_tipo_producto" />
+    <EntitySet Name="tb_tipo_unidad" EntityType="Self.tb_tipo_unidad" />
+    <EntitySet Name="tb_venta" EntityType="Self.tb_venta" />
+    <AssociationSet Name="fk_TB_ALMACEN_TB_ESTUDIANTE1" Association="Self.fk_TB_ALMACEN_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_almacen" EntitySet="tb_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_ALMACEN_TB_PRODUCTO1" Association="Self.fk_TB_ALMACEN_TB_PRODUCTO1">
+      <End Role="tb_producto" EntitySet="tb_producto" />
+      <End Role="tb_almacen" EntitySet="tb_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_MOVIMIENTO_ALMACEN_TB_ALMACEN1" Association="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_ALMACEN1">
+      <End Role="tb_almacen" EntitySet="tb_almacen" />
+      <End Role="tb_movimiento_almacen" EntitySet="tb_movimiento_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_CLIENTE_TB_ESTUDIANTE1" Association="Self.fk_TB_CLIENTE_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_cliente" EntitySet="tb_cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_VENTA_TB_CLIENTE1" Association="Self.fk_TB_VENTA_TB_CLIENTE1">
+      <End Role="tb_cliente" EntitySet="tb_cliente" />
+      <End Role="tb_venta" EntitySet="tb_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_COMPRA_TB_ESTUDIANTE1" Association="Self.fk_TB_COMPRA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_compra" EntitySet="tb_compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_COMPRA_TB_PROVEEDOR1" Association="Self.fk_TB_COMPRA_TB_PROVEEDOR1">
+      <End Role="tb_proveedor" EntitySet="tb_proveedor" />
+      <End Role="tb_compra" EntitySet="tb_compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_COMPRA_TB_COMPRA1" Association="Self.fk_TB_DETALLE_COMPRA_TB_COMPRA1">
+      <End Role="tb_compra" EntitySet="tb_compra" />
+      <End Role="tb_detalle_compra" EntitySet="tb_detalle_compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_MOVIMIENTO_ALMACEN_TB_COMPRA1" Association="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_COMPRA1">
+      <End Role="tb_compra" EntitySet="tb_compra" />
+      <End Role="tb_movimiento_almacen" EntitySet="tb_movimiento_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_COMPRA_TB_ESTUDIANTE1" Association="Self.fk_TB_DETALLE_COMPRA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_detalle_compra" EntitySet="tb_detalle_compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_COMPRA_TB_PRODUCTO1" Association="Self.fk_TB_DETALLE_COMPRA_TB_PRODUCTO1">
+      <End Role="tb_producto" EntitySet="tb_producto" />
+      <End Role="tb_detalle_compra" EntitySet="tb_detalle_compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_COMPRA_TB_TIPO_UNIDAD1" Association="Self.fk_TB_DETALLE_COMPRA_TB_TIPO_UNIDAD1">
+      <End Role="tb_tipo_unidad" EntitySet="tb_tipo_unidad" />
+      <End Role="tb_detalle_compra" EntitySet="tb_detalle_compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_PRODUCTO_TB_ESTUDIANTE1" Association="Self.fk_TB_DETALLE_PRODUCTO_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_detalle_producto" EntitySet="tb_detalle_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_PRODUCTO_TB_PRODUCTO1" Association="Self.fk_TB_DETALLE_PRODUCTO_TB_PRODUCTO1">
+      <End Role="tb_producto" EntitySet="tb_producto" />
+      <End Role="tb_detalle_producto" EntitySet="tb_detalle_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_SESION_TB_SESION_ESTUDIANTE1" Association="Self.fk_TB_DETALLE_SESION_TB_SESION_ESTUDIANTE1">
+      <End Role="tb_sesion_estudiante" EntitySet="tb_sesion_estudiante" />
+      <End Role="tb_detalle_sesion" EntitySet="tb_detalle_sesion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_VENTA_TB_ESTUDIANTE1" Association="Self.fk_TB_DETALLE_VENTA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_detalle_venta" EntitySet="tb_detalle_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_VENTA_TB_PRODUCTO1" Association="Self.fk_TB_DETALLE_VENTA_TB_PRODUCTO1">
+      <End Role="tb_producto" EntitySet="tb_producto" />
+      <End Role="tb_detalle_venta" EntitySet="tb_detalle_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_VENTA_TB_TIPO_UNIDAD1" Association="Self.fk_TB_DETALLE_VENTA_TB_TIPO_UNIDAD1">
+      <End Role="tb_tipo_unidad" EntitySet="tb_tipo_unidad" />
+      <End Role="tb_detalle_venta" EntitySet="tb_detalle_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_DETALLE_VENTA_TB_VENTA1" Association="Self.fk_TB_DETALLE_VENTA_TB_VENTA1">
+      <End Role="tb_venta" EntitySet="tb_venta" />
+      <End Role="tb_detalle_venta" EntitySet="tb_detalle_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_ESTADO_FACTURA_TB_ESTUDIANTE1" Association="Self.fk_TB_ESTADO_FACTURA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_estado_factura" EntitySet="tb_estado_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_NUM_FACTURA_TB_ESTADO_FACTURA1" Association="Self.fk_TB_NUM_FACTURA_TB_ESTADO_FACTURA1">
+      <End Role="tb_estado_factura" EntitySet="tb_estado_factura" />
+      <End Role="tb_num_factura" EntitySet="tb_num_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_ESTADO_RANGO_TB_ESTUDIANTE1" Association="Self.fk_TB_ESTADO_RANGO_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_estado_rango" EntitySet="tb_estado_rango" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_FACTURA_TB_ESTADO_RANGO1" Association="Self.fk_TB_FACTURA_TB_ESTADO_RANGO1">
+      <End Role="tb_estado_rango" EntitySet="tb_estado_rango" />
+      <End Role="tb_factura" EntitySet="tb_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_FACTURA_TB_ESTUDIANTE1" Association="Self.fk_TB_FACTURA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_factura" EntitySet="tb_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_MOVIMIENTO_ALMACEN_TB_ESTUDIANTE1" Association="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_movimiento_almacen" EntitySet="tb_movimiento_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_NUM_FACTURA_TB_ESTUDIANTE1" Association="Self.fk_TB_NUM_FACTURA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_num_factura" EntitySet="tb_num_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_PRODUCTO_TB_ESTUDIANTE1" Association="Self.fk_TB_PRODUCTO_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_producto" EntitySet="tb_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_PROVEEDOR_TB_ESTUDIANTE1" Association="Self.fk_TB_PROVEEDOR_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_proveedor" EntitySet="tb_proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_SESION_ESTUDIANTE_TB_ESTUDIANTE" Association="Self.fk_TB_SESION_ESTUDIANTE_TB_ESTUDIANTE">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_sesion_estudiante" EntitySet="tb_sesion_estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_TIPO_FACTURA_TB_ESTUDIANTE1" Association="Self.fk_TB_TIPO_FACTURA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_tipo_factura" EntitySet="tb_tipo_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_TIPO_MOVIMIENTO_TB_ESTUDIANTE1" Association="Self.fk_TB_TIPO_MOVIMIENTO_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_tipo_movimiento" EntitySet="tb_tipo_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_TIPO_PRODUCTO_TB_ESTUDIANTE1" Association="Self.fk_TB_TIPO_PRODUCTO_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_tipo_producto" EntitySet="tb_tipo_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_TIPO_UNIDAD_TB_ESTUDIANTE1" Association="Self.fk_TB_TIPO_UNIDAD_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_tipo_unidad" EntitySet="tb_tipo_unidad" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_VENTA_TB_ESTUDIANTE1" Association="Self.fk_TB_VENTA_TB_ESTUDIANTE1">
+      <End Role="tb_estudiante" EntitySet="tb_estudiante" />
+      <End Role="tb_venta" EntitySet="tb_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_FACTURA_TB_TIPO_FACTURA1" Association="Self.fk_TB_FACTURA_TB_TIPO_FACTURA1">
+      <End Role="tb_tipo_factura" EntitySet="tb_tipo_factura" />
+      <End Role="tb_factura" EntitySet="tb_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_NUM_FACTURA_TB_FACTURA1" Association="Self.fk_TB_NUM_FACTURA_TB_FACTURA1">
+      <End Role="tb_factura" EntitySet="tb_factura" />
+      <End Role="tb_num_factura" EntitySet="tb_num_factura" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_MOVIMIENTO1" Association="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_MOVIMIENTO1">
+      <End Role="tb_tipo_movimiento" EntitySet="tb_tipo_movimiento" />
+      <End Role="tb_movimiento_almacen" EntitySet="tb_movimiento_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_UNIDAD1" Association="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_TIPO_UNIDAD1">
+      <End Role="tb_tipo_unidad" EntitySet="tb_tipo_unidad" />
+      <End Role="tb_movimiento_almacen" EntitySet="tb_movimiento_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_MOVIMIENTO_ALMACEN_TB_VENTA1" Association="Self.fk_TB_MOVIMIENTO_ALMACEN_TB_VENTA1">
+      <End Role="tb_venta" EntitySet="tb_venta" />
+      <End Role="tb_movimiento_almacen" EntitySet="tb_movimiento_almacen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_VENTA_TB_NUM_FACTURA1" Association="Self.fk_TB_VENTA_TB_NUM_FACTURA1">
+      <End Role="tb_num_factura" EntitySet="tb_num_factura" />
+      <End Role="tb_venta" EntitySet="tb_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_PRODUCTO_TB_TIPO_PRODUCTO1" Association="Self.fk_TB_PRODUCTO_TB_TIPO_PRODUCTO1">
+      <End Role="tb_tipo_producto" EntitySet="tb_tipo_producto" />
+      <End Role="tb_producto" EntitySet="tb_producto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

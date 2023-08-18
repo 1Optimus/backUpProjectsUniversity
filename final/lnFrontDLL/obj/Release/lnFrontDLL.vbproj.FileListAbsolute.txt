@@ -1,0 +1,10 @@
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\bin\Release\lnFrontDLL.dll
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\bin\Release\lnFrontDLL.pdb
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\bin\Release\lnFrontDLL.xml
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\obj\Release\lnFrontDLL.vbprojAssemblyReference.cache
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\obj\Release\lnFrontDLL.Resources.resources
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\obj\Release\lnFrontDLL.vbproj.GenerateResource.cache
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\obj\Release\lnFrontDLL.vbproj.CoreCompileInputs.cache
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\obj\Release\lnFrontDLL.dll
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\obj\Release\lnFrontDLL.xml
+C:\Users\ahm31\source\repos\LaboratorioDesaWeb\lnFrontDLL\obj\Release\lnFrontDLL.pdb

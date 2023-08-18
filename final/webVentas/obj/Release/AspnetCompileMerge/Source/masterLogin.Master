@@ -1,0 +1,24 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="masterLogin.master.vb" Inherits="webVentas.masterLogin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <asp:Image ImageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQWL72nB4fQ--pzO3h10ql1LB9Hqe3PbwP7HA&usqp=CAU" runat="server" />
+    <p>
+        Este es el encabezado de la página maestra
+    </p>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

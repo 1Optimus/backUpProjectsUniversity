@@ -1,0 +1,32 @@
+$colorEncabezdos: #3590da;
+
+
+.menu{
+    margin:0px;
+    padding:0px;
+    display: flex;
+
+}
+
+.menu > li{
+    display: block;
+    //float: left;
+    padding: 0 15px;
+}
+
+table {
+    border-color: black;
+    border:1;
+    th {
+        background-color: rgba($colorEncabezdos,0.99);
+        border-color: black;
+        transition:2s;
+        &:hover{
+            transform: scale(0.95);
+            background-color: cadetblue;
+
+        }
+    }
+    
+
+}

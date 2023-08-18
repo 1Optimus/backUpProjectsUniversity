@@ -1,0 +1,27 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="mpPrincipal.master.vb" Inherits="webVentas.mpPrincipal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="css/main.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server"> 
+        <div class="menu" id="divmenu" runat="server" >
+            <asp:Image ImageUrl="img/umg1.png" runat="server" Height="133px" Width="133px" />               
+        <div id="header">		
+            <h1>Ricardo Alejandro Perez Rodriguez  090-17-1255 Examen final, serie 2</h1>
+		</div>                    
+        </div>
+        <div>
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

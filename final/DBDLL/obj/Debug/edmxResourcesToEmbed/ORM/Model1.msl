@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mydbModelStoreContainer" CdmEntityContainer="mydbEntities">
+    <EntitySetMapping Name="tb_almacen">
+      <EntityTypeMapping TypeName="mydbModel.tb_almacen">
+        <MappingFragment StoreEntitySet="tb_almacen">
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="EXISTENCIA" ColumnName="EXISTENCIA" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_cliente">
+      <EntityTypeMapping TypeName="mydbModel.tb_cliente">
+        <MappingFragment StoreEntitySet="tb_cliente">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="NOM1" ColumnName="NOM1" />
+          <ScalarProperty Name="NOM2" ColumnName="NOM2" />
+          <ScalarProperty Name="APE1" ColumnName="APE1" />
+          <ScalarProperty Name="APE2" ColumnName="APE2" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_compra">
+      <EntityTypeMapping TypeName="mydbModel.tb_compra">
+        <MappingFragment StoreEntitySet="tb_compra">
+          <ScalarProperty Name="ID_COMPRA" ColumnName="ID_COMPRA" />
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+          <ScalarProperty Name="SERIE_DOCUMENTO" ColumnName="SERIE_DOCUMENTO" />
+          <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalle_compra">
+      <EntityTypeMapping TypeName="mydbModel.tb_detalle_compra">
+        <MappingFragment StoreEntitySet="tb_detalle_compra">
+          <ScalarProperty Name="ID_DETALLE_COMPRA" ColumnName="ID_DETALLE_COMPRA" />
+          <ScalarProperty Name="ID_COMPRA" ColumnName="ID_COMPRA" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_TIPO_UNIDAD" ColumnName="ID_TIPO_UNIDAD" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalle_producto">
+      <EntityTypeMapping TypeName="mydbModel.tb_detalle_producto">
+        <MappingFragment StoreEntitySet="tb_detalle_producto">
+          <ScalarProperty Name="ID_DETALLE_PRODUCTO" ColumnName="ID_DETALLE_PRODUCTO" />
+          <ScalarProperty Name="TB_PRODUCTO_ID_PRODUCTO" ColumnName="TB_PRODUCTO_ID_PRODUCTO" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalle_sesion">
+      <EntityTypeMapping TypeName="mydbModel.tb_detalle_sesion">
+        <MappingFragment StoreEntitySet="tb_detalle_sesion">
+          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="ID_ESTUDIANTE" ColumnName="ID_ESTUDIANTE" />
+          <ScalarProperty Name="FECHA_SESION" ColumnName="FECHA_SESION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalle_venta">
+      <EntityTypeMapping TypeName="mydbModel.tb_detalle_venta">
+        <MappingFragment StoreEntitySet="tb_detalle_venta">
+          <ScalarProperty Name="ID_DETALLE_VENTA" ColumnName="ID_DETALLE_VENTA" />
+          <ScalarProperty Name="ID_VENTA" ColumnName="ID_VENTA" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_TIPO_UNIDAD" ColumnName="ID_TIPO_UNIDAD" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_estado_factura">
+      <EntityTypeMapping TypeName="mydbModel.tb_estado_factura">
+        <MappingFragment StoreEntitySet="tb_estado_factura">
+          <ScalarProperty Name="ID_ESTADO_FACTURA" ColumnName="ID_ESTADO_FACTURA" />
+          <ScalarProperty Name="NOM_ESTADO_FACTURA" ColumnName="NOM_ESTADO_FACTURA" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_estado_rango">
+      <EntityTypeMapping TypeName="mydbModel.tb_estado_rango">
+        <MappingFragment StoreEntitySet="tb_estado_rango">
+          <ScalarProperty Name="ID_ESTADO_RANGO" ColumnName="ID_ESTADO_RANGO" />
+          <ScalarProperty Name="NOM_ESTADO_RANGO" ColumnName="NOM_ESTADO_RANGO" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_estudiante">
+      <EntityTypeMapping TypeName="mydbModel.tb_estudiante">
+        <MappingFragment StoreEntitySet="tb_estudiante">
+          <ScalarProperty Name="ID_ESTUDIANTE" ColumnName="ID_ESTUDIANTE" />
+          <ScalarProperty Name="NOMBRE_ESTUDIANTE" ColumnName="NOMBRE_ESTUDIANTE" />
+          <ScalarProperty Name="CARNE" ColumnName="CARNE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_factura">
+      <EntityTypeMapping TypeName="mydbModel.tb_factura">
+        <MappingFragment StoreEntitySet="tb_factura">
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="ID_TIPO_FACTURA" ColumnName="ID_TIPO_FACTURA" />
+          <ScalarProperty Name="ID_ESTADO_RANGO" ColumnName="ID_ESTADO_RANGO" />
+          <ScalarProperty Name="SERIE_FACTURA" ColumnName="SERIE_FACTURA" />
+          <ScalarProperty Name="RANGO_INICIAL" ColumnName="RANGO_INICIAL" />
+          <ScalarProperty Name="RANGO_FINAL" ColumnName="RANGO_FINAL" />
+          <ScalarProperty Name="FACTURA_ACTUAL" ColumnName="FACTURA_ACTUAL" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_movimiento_almacen">
+      <EntityTypeMapping TypeName="mydbModel.tb_movimiento_almacen">
+        <MappingFragment StoreEntitySet="tb_movimiento_almacen">
+          <ScalarProperty Name="ID_MOVIMIENTO" ColumnName="ID_MOVIMIENTO" />
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_TIPO_MOVIMIENTO" ColumnName="ID_TIPO_MOVIMIENTO" />
+          <ScalarProperty Name="ID_TIPO_UNIDAD" ColumnName="ID_TIPO_UNIDAD" />
+          <ScalarProperty Name="ID_COMPRA" ColumnName="ID_COMPRA" />
+          <ScalarProperty Name="ID_VENTA" ColumnName="ID_VENTA" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_num_factura">
+      <EntityTypeMapping TypeName="mydbModel.tb_num_factura">
+        <MappingFragment StoreEntitySet="tb_num_factura">
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="ID_TIPO_FACTURA" ColumnName="ID_TIPO_FACTURA" />
+          <ScalarProperty Name="NUM_FACTURA" ColumnName="NUM_FACTURA" />
+          <ScalarProperty Name="ID_ESTADO_FACTURA" ColumnName="ID_ESTADO_FACTURA" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_producto">
+      <EntityTypeMapping TypeName="mydbModel.tb_producto">
+        <MappingFragment StoreEntitySet="tb_producto">
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_TIPO_PRODUCTO" ColumnName="ID_TIPO_PRODUCTO" />
+          <ScalarProperty Name="NOM_PRODUCTO" ColumnName="NOM_PRODUCTO" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_proveedor">
+      <EntityTypeMapping TypeName="mydbModel.tb_proveedor">
+        <MappingFragment StoreEntitySet="tb_proveedor">
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="NOM1" ColumnName="NOM1" />
+          <ScalarProperty Name="NOM2" ColumnName="NOM2" />
+          <ScalarProperty Name="APE1" ColumnName="APE1" />
+          <ScalarProperty Name="APE2" ColumnName="APE2" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_sesion_estudiante">
+      <EntityTypeMapping TypeName="mydbModel.tb_sesion_estudiante">
+        <MappingFragment StoreEntitySet="tb_sesion_estudiante">
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="ID_ESTUDIANTE" ColumnName="ID_ESTUDIANTE" />
+          <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipo_factura">
+      <EntityTypeMapping TypeName="mydbModel.tb_tipo_factura">
+        <MappingFragment StoreEntitySet="tb_tipo_factura">
+          <ScalarProperty Name="ID_TIPO_FACTURA" ColumnName="ID_TIPO_FACTURA" />
+          <ScalarProperty Name="NOM_TIPO_FACTURA" ColumnName="NOM_TIPO_FACTURA" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipo_movimiento">
+      <EntityTypeMapping TypeName="mydbModel.tb_tipo_movimiento">
+        <MappingFragment StoreEntitySet="tb_tipo_movimiento">
+          <ScalarProperty Name="ID_TIPO_MOVIMIENTO" ColumnName="ID_TIPO_MOVIMIENTO" />
+          <ScalarProperty Name="NOM_TIPO_MOVIMIENTO" ColumnName="NOM_TIPO_MOVIMIENTO" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipo_producto">
+      <EntityTypeMapping TypeName="mydbModel.tb_tipo_producto">
+        <MappingFragment StoreEntitySet="tb_tipo_producto">
+          <ScalarProperty Name="ID_TIPO_PRODUCTO" ColumnName="ID_TIPO_PRODUCTO" />
+          <ScalarProperty Name="NOM_PRODUCTO" ColumnName="NOM_PRODUCTO" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipo_unidad">
+      <EntityTypeMapping TypeName="mydbModel.tb_tipo_unidad">
+        <MappingFragment StoreEntitySet="tb_tipo_unidad">
+          <ScalarProperty Name="ID_TIPO_UNIDAD" ColumnName="ID_TIPO_UNIDAD" />
+          <ScalarProperty Name="NOM_TIPO_UNIDAD" ColumnName="NOM_TIPO_UNIDAD" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_venta">
+      <EntityTypeMapping TypeName="mydbModel.tb_venta">
+        <MappingFragment StoreEntitySet="tb_venta">
+          <ScalarProperty Name="ID_VENTA" ColumnName="ID_VENTA" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="ID_TIPO_FACTURA" ColumnName="ID_TIPO_FACTURA" />
+          <ScalarProperty Name="NUM_FACTURA" ColumnName="NUM_FACTURA" />
+          <ScalarProperty Name="TOTA_FACTURA" ColumnName="TOTA_FACTURA" />
+          <ScalarProperty Name="TB_ESTUDIANTE_ID_ESTUDIANTE" ColumnName="TB_ESTUDIANTE_ID_ESTUDIANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
